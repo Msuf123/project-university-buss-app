@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import DropDown from "../components/ui/DropDown";
@@ -54,6 +54,7 @@ const categoryOptions = [
   },
 ];
 
+
 const Register = () => {
   const [seats, setSeats] = React.useState([]);
   const [amenities, setAmenities] = React.useState([]);
@@ -104,7 +105,10 @@ const Register = () => {
     threeDaysLater.setDate(threeDaysLater.getDate() + 4);
     setArrivalDate(threeDaysLater.toISOString().split("T")[0]);
   };
-
+  useEffect(()=>{
+    console.log(selector.locations)
+  })
+  
   return (
     <section>
       <div>

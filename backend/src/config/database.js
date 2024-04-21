@@ -3,7 +3,7 @@ const { mongoose } = require("mongoose");
 
 const connectToMongo = async () => {
   try {
-    const URI = process.env.MONGO_URI;
+    const URI = 'mongodb://127.0.0.1:27017';
     await mongoose.connect(URI, { dbName: "reserve" });
     console.log("Connected to MongoDB");
   } catch (error) {

@@ -1,15 +1,23 @@
+import { useEffect } from "react";
 import Select from "react-select";
 
 const DropDown = (props) => {
   const { label, htmlFor, ...restProps } = props;
-
+  useEffect(()=>{
+    console.log(restProps.options)
+  })
+  const options = [
+    { value: 'Delhi', label: 'Delhi' },
+    { value: 'Chandighar', label: 'Chandighar' },
+    { value: 'Ludhiyana', label: 'Lidhiyana' },
+  ];
   return (
     <div>
       <label htmlFor={htmlFor} className="mb-1 text-sm font-medium">
         {label}
       </label>
       <Select
-        {...restProps}
+        options={options}
         isSearchable
         isClearable
         classNames={{

@@ -12,6 +12,7 @@ app.use("/", router);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
+  console.log(process.env.PORT)
   console.log(`The server is running on http://localhost:${PORT}`);
   connectToMongo();
 });
